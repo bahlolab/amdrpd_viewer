@@ -100,6 +100,9 @@ demog_cat <- demog_cat %>%
                 .fns = ~ trimws(.)))
 
 
+# shorten demog cont names ------------------------------------------------
+
+demog_cont <- demog_cont %>% rename(age=age_at_med_hx) # tbc: add tooltip here / data dict tab
 
 # full demog --------------------------------------------------------------
 
@@ -114,7 +117,7 @@ demog_full <- full_join(demog_cat,demog_cont,by=c('source','cera_id')) %>%
 #data for stacked barchart of counts
 
 demog_plt_dat <- demog_full %>% 
-  select(-c(1,weight_kg:age_at_med_hx)) %>% 
+  select(-c(1,weight_kg:age)) %>% 
   gather(key,value,-1) %>% 
   mutate(value= str_remove(value,"RPD")) %>% 
   mutate(value= str_remove(value," AMD")) %>%

@@ -1,9 +1,4 @@
-library(shiny)
-library(ggplot2)
-library(dplyr)
-library(tidyr)
-library(forcats)
-library(ggtext)  # for geom_richtext
+
 
 # Assuming 'global.R' contains necessary objects like user_base_hash, user, password, assay_vec, demog_plt_dat, etc.
 
@@ -205,7 +200,7 @@ shinyServer(function(input, output, session) {
   plt_cont <- reactive({
     demog_full %>% 
       filter(cera_id %in% subset_ids()) %>% 
-      gather(key, value, c(weight_kg:age_at_med_hx)) %>% 
+      gather(key, value, c(weight_kg:age)) %>% 
       drop_na() %>% 
       ggplot(aes(y = key, x = value,
                  col = !!sym(boxlevels()),
