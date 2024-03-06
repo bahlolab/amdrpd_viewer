@@ -9,7 +9,6 @@ pswd_local/
 *.xlsx
 *.csv
 *.Rdata
-*.RData
 *.Rda
 
 
