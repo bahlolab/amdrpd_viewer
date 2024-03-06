@@ -1,2 +1,1 @@
-# amdrpd_viewer
-data viewer for amd rpd cohort
+AMD RPD Data Viewer

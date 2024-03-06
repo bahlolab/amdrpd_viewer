@@ -1,0 +1,15 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+
+
+pswd_local/
+
+*.xlsx
+*.csv
+*.Rdata
+*.RData
+*.Rda
+
+
